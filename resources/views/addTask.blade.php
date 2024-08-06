@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>Add Task</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet"> <!-- Link to your custom CSS file -->
 </head>
@@ -20,7 +20,7 @@
                         <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/addTask" id="tasks-link">Tasks</a>
+                        <a class="nav-link" href="/tasks">Tasks</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/about">About</a>
@@ -32,26 +32,27 @@
             </div>
         </div>
     </nav>
-    
     <div class="container mt-5">
-        <div class="container mt-5">
-        <div class="jumbotron p-5 text-center bg-light shadow-sm rounded">
-            <h1 class="display-4 mb-4">Welcome to Task Scheduler!</h1>
-            <p class="lead mb-4">This is a simple application to help you schedule and manage your tasks efficiently.</p>
-            <hr class="my-4">
-            <p>Create, update, and manage your tasks with ease. Get started by navigating to the Tasks section.</p>
-            <a class="btn btn-primary btn-lg" href="#" role="button">Get Started</a>
+        <div class="card p-4 shadow-sm">
+            <h2 class="card-title mb-4">Add New Task</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="title" class="form-label">Task Title</label>
+                    <input type="text" class="form-control" id="title" name="title" required>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" id="description" name="description" rows="4" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="due_date" class="form-label">Due Date</label>
+                    <input type="date" class="form-control" id="due_date" name="due_date" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Task</button>
+            </form>
         </div>
     </div>
 
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.getElementById('tasks-link').addEventListener('click', function(event) {
-            event.preventDefault();
-            window.location.href = '/tasks/create';
-        });
-    </script>
 </body>
 </html>
